@@ -11,7 +11,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Orbitron', sans-serif;
-      background: url('https://i.ibb.co/MydqXbVM/c1c7ad910545391571d794742e5e8eeb.jpg') no-repeat center center fixed;
+      background: url('https://i.ibb.co/wr33j97F/4a7ee02d696989870ddb8789e49f1841.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
       overflow-x: hidden;
@@ -53,12 +53,8 @@
     }
 
     @keyframes flicker {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-        opacity: 1;
-      }
-      20%, 24%, 55% {
-        opacity: 0.4;
-      }
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+      20%, 24%, 55% { opacity: 0.4; }
     }
 
     .header p {
@@ -254,13 +250,13 @@
     <div class="member-card">
       <h3>Monster</h3>
       <p>UNSTOPPABLE Server Master & Typer King</p>
-      <a onclick="openModal('monster')">View More Details</a>
+      <a onclick="openModal('monster'); speakDetails(modalTexts['monster']);">View More Details</a>
       <a href="https://www.facebook.com/blackpantherrulexkaownerkamena" target="_blank">Visit Facebook Profile</a>
     </div>
     <div class="member-card">
       <h3>Smarty</h3>
       <p>Fastest Typist & Server Developer</p>
-      <a onclick="openModal('smarty')">View More Details</a>
+      <a onclick="openModal('smarty'); speakDetails(modalTexts['smarty']);">View More Details</a>
       <a href="https://www.facebook.com/ali7s90" target="_blank">Visit Facebook Profile</a>
     </div>
   </div>
@@ -272,108 +268,109 @@
     <div class="member-card">
       <h3>Alfaz</h3>
       <p>Typer & Most Popular Abuser</p>
-      <a onclick="openModal('alfaz')">View More Details</a>
+      <a onclick="openModal('alfaz'); speakDetails(modalTexts['alfaz']);">View More Details</a>
       <a href="https://www.facebook.com/shakir.knak" target="_blank">Visit Facebook Profile</a>
     </div>
     <div class="member-card">
       <h3>Rubel</h3>
       <p>Typer & Most Popular Abuser</p>
-      <a onclick="openModal('rubel')">View More Details</a>
+      <a onclick="openModal('rubel'); speakDetails(modalTexts['rubel']);">View More Details</a>
       <a href="https://www.facebook.com/md.rubel.1437" target="_blank">Visit Facebook Profile</a>
     </div>
     <div class="member-card">
       <h3>Shad</h3>
       <p>Typer & Popular Abuser</p>
-      <a onclick="openModal('shad')">View More Details</a>
+      <a onclick="openModal('shad'); speakDetails(modalTexts['shad']);">View More Details</a>
       <a href="https://www.facebook.com/c.t.e.857766" target="_blank">Visit Facebook Profile</a>
     </div>
   </div>
 </div>
 
 <!-- Modals -->
-<div id="modal-monster" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('monster')">&times;</span>
-    <h2>Monster</h2>
-    <p>Leader of Black Panther RULEX, known for server domination, bot coding, and powerful Facebook spamming tools.</p>
-  </div>
-</div>
+<div id="modal-monster" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('monster')">&times;</span><h2>Monster</h2><p>Leader of Black Panther RULEX, known for server domination, bot coding, and powerful Facebook spamming tools.</p></div></div>
+<div id="modal-smarty" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('smarty')">&times;</span><h2>Smarty</h2><p>Smart coder and fast typer, backbone of the team’s tool development and Facebook automation tactics.</p></div></div>
+<div id="modal-alfaz" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('alfaz')">&times;</span><h2>Alfaz</h2><p>Most aggressive abuser and comment attacker, feared across groups and known for night raids.</p></div></div>
+<div id="modal-rubel" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('rubel')">&times;</span><h2>Rubel</h2><p>Master of live trolling and viral meme spamming. Keeps the energy high and the enemies annoyed.</p></div></div>
+<div id="modal-shad" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('shad')">&times;</span><h2>Shad</h2><p>The funniest roaster in the gang, always ready to flood comments and entertain with epic burns.</p></div></div>
 
-<div id="modal-smarty" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('smarty')">&times;</span>
-    <h2>Smarty</h2>
-    <p>Smart coder and fast typer, backbone of the team’s tool development and Facebook automation tactics.</p>
-  </div>
-</div>
-
-<div id="modal-alfaz" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('alfaz')">&times;</span>
-    <h2>Alfaz</h2>
-    <p>Most aggressive abuser and comment attacker, feared across groups and known for night raids.</p>
-  </div>
-</div>
-
-<div id="modal-rubel" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('rubel')">&times;</span>
-    <h2>Rubel</h2>
-    <p>Master of live trolling and viral meme spamming. Keeps the energy high and the enemies annoyed.</p>
-  </div>
-</div>
-
-<div id="modal-shad" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('shad')">&times;</span>
-    <h2>Shad</h2>
-    <p>The funniest roaster in the gang, always ready to flood comments and entertain with epic burns.</p>
-  </div>
+<div style="text-align: center; padding: 25px 15px; background: linear-gradient(to right, #0d0d0d, #1a0000); border-top: 3px solid crimson; color: #ff1744; font-weight: 900; font-size: 1.5em; letter-spacing: 2px; font-family: 'Orbitron', sans-serif; box-shadow: 0 -5px 20px crimson; animation: intenseGlow 2s infinite alternate; text-transform: uppercase; position: relative; z-index: 999;">
+  ⚡ Made by <span style="color: white;">Monster</span> ⚡ — 2025 • <span style="color: crimson;">🌚👑</span>
 </div>
 
 <script>
+  const modalTexts = {
+    monster: "Monster. Leader of Black Panther Rulex. Known for server domination, bot coding, and powerful Facebook spamming tools.",
+    smarty: "Smarty. Smart coder and fast typer. Backbone of the team’s tool development and Facebook automation tactics.",
+    alfaz: "Alfaz. Most aggressive abuser and comment attacker. Feared across groups and known for night raids.",
+    rubel: "Rubel. Master of live trolling and viral meme spamming. Keeps the energy high and the enemies annoyed.",
+    shad: "Shad. The funniest roaster in the gang. Always ready to flood comments and entertain with epic burns."
+  };
+
   function openModal(name) {
-    playClick();
-    document.getElementById("modal-" + name).style.display = "block";
+    document.getElementById('clickSound').play();
+    const modal = document.getElementById("modal-" + name);
+    if (modal) modal.style.display = "block";
   }
 
   function closeModal(name) {
-    playClick();
-    document.getElementById("modal-" + name).style.display = "none";
+    document.getElementById('clickSound').play();
+    const modal = document.getElementById("modal-" + name);
+    if (modal) modal.style.display = "none";
+    window.speechSynthesis.cancel();
   }
 
-  function playClick() {
-    document.getElementById('clickSound').play();
+  function speakDetails(text) {
+    if (!window.speechSynthesis) return;
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.rate = 0.9;
+    utter.pitch = 0.8;
+    utter.volume = 1;
+    utter.lang = 'en-US';
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utter);
   }
 
   window.onclick = function(event) {
     document.querySelectorAll('.modal').forEach(modal => {
       if (event.target === modal) {
         modal.style.display = "none";
+        window.speechSynthesis.cancel();
       }
     });
+  };
+
+  // Floating evil emojis
+  const evilEmojis = ['💀', '☠️', '👿', '🩸', '🔥'];
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @keyframes floatEvil {
+      0% { transform: translateY(0px) rotate(0deg); opacity: 0.1; }
+      50% { transform: translateY(-100px) rotate(180deg); opacity: 0.3; }
+      100% { transform: translateY(0px) rotate(360deg); opacity: 0.1; }
+    }
+    .floating-evil {
+      position: fixed;
+      z-index: 10;
+      pointer-events: none;
+      color: crimson;
+      opacity: 0.2;
+      animation: floatEvil linear infinite;
+      font-family: 'Segoe UI Emoji', sans-serif;
+    }
+  `;
+  document.head.appendChild(style);
+  for (let i = 0; i < 20; i++) {
+    const evil = document.createElement('div');
+    evil.className = 'floating-evil';
+    evil.innerText = evilEmojis[Math.floor(Math.random() * evilEmojis.length)];
+    evil.style.left = Math.random() * 100 + 'vw';
+    evil.style.top = Math.random() * 100 + 'vh';
+    evil.style.fontSize = (Math.random() * 24 + 20) + 'px';
+    evil.style.animationDuration = (Math.random() * 20 + 10) + 's';
+    evil.style.animationDelay = (Math.random() * 5) + 's';
+    document.body.appendChild(evil);
   }
 </script>
-
-<!-- Footer -->
-<div style="
-  text-align: center;
-  padding: 25px 15px;
-  background: linear-gradient(to right, #0d0d0d, #1a0000);
-  border-top: 3px solid crimson;
-  color: #ff1744;
-  font-weight: 900;
-  font-size: 1.5em;
-  letter-spacing: 2px;
-  font-family: 'Orbitron', sans-serif;
-  box-shadow: 0 -5px 20px crimson;
-  animation: intenseGlow 2s infinite alternate;
-  text-transform: uppercase;
-  position: relative;
-  z-index: 999;
-">
-  ⚡ Made by <span style="color: white;">Monster</span> ⚡ — 2025 • <span style="color: crimson;">🌚👑</span>
-</div>
 
 </body>
 </html>
