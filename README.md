@@ -1,1 +1,1 @@
-# Black-panther-rulex-introduction
+# BLACK-PANTHER-RULEX-PANEL
