@@ -3,148 +3,377 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Black Panther Rulex</title>
+  <title>Black Panther RULEX</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
     body {
-      background-color: #000;
-      color: #fff;
-      font-family: 'Courier New', Courier, monospace;
       margin: 0;
       padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: url('https://i.ibb.co/MydqXbVM/c1c7ad910545391571d794742e5e8eeb.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: url('https://i.ibb.co/dJ9Zr9v/smoke.gif') center/cover no-repeat;
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 0;
+      animation: fogMove 60s linear infinite;
+    }
+
+    @keyframes fogMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 100% 100%; }
     }
 
     .header {
       text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(to right, #111, #222);
+      padding: 80px 20px;
+      background: linear-gradient(to right, #0d0d0d, #1a1a1a);
+      animation: pulse 5s infinite alternate;
     }
 
     .header h1 {
-      font-size: 3.5em;
+      font-size: 4em;
       color: crimson;
-      text-shadow: 2px 2px 10px #000;
-      letter-spacing: 2px;
+      text-shadow: 0 0 20px crimson;
+      letter-spacing: 3px;
+      animation: neonGlow 2s infinite alternate, flicker 2s infinite;
+    }
+
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+      }
+      20%, 24%, 55% {
+        opacity: 0.4;
+      }
     }
 
     .header p {
-      font-size: 1.2em;
-      color: #ccc;
+      font-size: 1.4em;
+      color: #aaa;
+    }
+
+    @keyframes pulse {
+      0% { background-position: 0 0; }
+      100% { background-position: 100% 100%; }
+    }
+
+    @keyframes neonGlow {
+      from { text-shadow: 0 0 5px crimson, 0 0 10px crimson; }
+      to { text-shadow: 0 0 20px crimson, 0 0 30px red; }
     }
 
     .team-section {
-      padding: 40px 20px;
+      padding: 60px 20px;
       text-align: center;
     }
 
     .team-section h2 {
       color: crimson;
-      font-size: 2em;
-      margin-bottom: 30px;
+      font-size: 2.5em;
+      margin-bottom: 40px;
       text-transform: uppercase;
+      animation: glow 1.5s infinite alternate;
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px crimson; }
+      100% { text-shadow: 0 0 20px crimson; }
     }
 
     .members {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 30px;
     }
 
     .member-card {
       background-color: #111;
       border: 2px solid crimson;
       padding: 20px;
-      border-radius: 10px;
-      width: 220px;
-      box-shadow: 0 0 15px crimson;
-      transition: 0.3s;
+      border-radius: 15px;
+      width: 240px;
+      box-shadow: 0 0 20px crimson;
+      transition: transform 0.4s, box-shadow 0.4s;
+      position: relative;
     }
 
     .member-card:hover {
-      transform: scale(1.05);
+      transform: scale(1.07);
+      box-shadow: 0 0 30px red, inset 0 0 10px crimson;
+      background: radial-gradient(circle at center, #1a1a1a 20%, #000 100%);
     }
 
-    .member-card img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin-bottom: 10px;
-      border: 2px solid #333;
+    .member-card::after {
+      content: '☠';
+      position: absolute;
+      font-size: 28px;
+      color: crimson;
+      top: -10px;
+      right: 10px;
+      animation: floatSkull 2.5s infinite ease-in-out;
+      opacity: 0.6;
     }
 
-    .member-card h3, .member-card h4 {
-      margin: 10px 0;
+    @keyframes floatSkull {
+      0% { transform: translateY(0); opacity: 0.5; }
+      50% { transform: translateY(-10px); opacity: 1; }
+      100% { transform: translateY(0); opacity: 0.5; }
+    }
+
+    .member-card h3 {
+      margin: 15px 0 10px;
       color: #fff;
+      font-size: 1.3em;
     }
 
-    .member-card p {
-      color: #aaa;
+    .member-card p, .details {
+      color: #ccc;
       font-size: 0.9em;
     }
 
     .member-card a {
-      display: block;
       margin-top: 10px;
+      display: inline-block;
       color: crimson;
       text-decoration: none;
+      font-weight: bold;
+      border: 1px solid crimson;
+      padding: 5px 10px;
+      border-radius: 8px;
+      transition: background 0.3s, transform 0.3s;
+      animation: buttonPulse 2s infinite;
     }
 
     .member-card a:hover {
-      text-decoration: underline;
+      background: crimson;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    @keyframes buttonPulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+    }
+
+    .modal-content {
+      background-color: #111;
+      margin: 10% auto;
+      padding: 30px;
+      border: 2px solid crimson;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 0 30px crimson;
+      color: #fff;
+      animation: fadeIn 0.5s ease-in-out, evilShake 0.5s;
+    }
+
+    @keyframes fadeIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes evilShake {
+      0% { transform: translate(0px, 0px) rotate(0deg); }
+      20% { transform: translate(-2px, 2px) rotate(-1deg); }
+      40% { transform: translate(2px, -1px) rotate(1deg); }
+      60% { transform: translate(-1px, 2px) rotate(-1deg); }
+      80% { transform: translate(1px, -1px) rotate(1deg); }
+      100% { transform: translate(0px, 0px) rotate(0deg); }
+    }
+
+    .close {
+      color: crimson;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: white;
+    }
+
+    audio {
+      display: none;
+    }
+
+    @keyframes intenseGlow {
+      0% {
+        text-shadow: 0 0 5px #ff1744, 0 0 10px #ff1744, 0 0 15px #ff1744;
+      }
+      100% {
+        text-shadow: 0 0 10px #ff1744, 0 0 20px #ff1744, 0 0 30px #ff1744, 0 0 40px red;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="header">
-    <h1>BLACK PANTHER RULEX</h1>
-    <p>The Most Fearless Rulex Team Ruling Facebook</p>
-  </div>
+<audio autoplay loop>
+  <source src="https://www.fesliyanstudios.com/play-mp3/6516" type="audio/mp3">
+</audio>
 
-  <div class="team-section">
-    <h2>Owners</h2>
-    <div class="members">
-      <div class="member-card">
-<a href="https://ibb.co/V075QCBT"><img src="https://i.ibb.co/WNbjPzKf/1748979269528.jpg" alt="1748979269528" border="0"></a>
-        <h3>Monster</h3>
-        <p>UNSTOPPABLE Server Master & Typer King</p>
-        <a href="https://www.facebook.com/gsebzdcsb" target="_blank">Monster - Facebook Profile</a>
-    
-          <div class="team-section">
-    
-    <div class="members">
-      <div class="member-card">
-        
-      <a href="https://ibb.co/PszMxJrj"><img src="https://i.ibb.co/qLFCBhDj/1748978790061.jpg" alt="1748978790061" border="0"></a>
+<audio id="clickSound" src="https://www.fesliyanstudios.com/play-mp3/6963" preload="auto"></audio>
+
+<div class="header">
+  <h1>👑💀BLACK PANTHER RULEX💀☠️</h1>
+  <p>The Most Dangerous Rulex Team Ruling Facebook</p>
+</div>
+
+<div class="team-section">
+  <h2>Owners</h2>
+  <div class="members">
+    <div class="member-card">
+      <h3>Monster</h3>
+      <p>UNSTOPPABLE Server Master & Typer King</p>
+      <a onclick="openModal('monster')">View More Details</a>
+      <a href="https://www.facebook.com/blackpantherrulexkaownerkamena" target="_blank">Visit Facebook Profile</a>
+    </div>
+    <div class="member-card">
       <h3>Smarty</h3>
-        <p>UNSTOPPABLE Server Master & Typer King</p>
-        <a href="https://www.facebook.com/smarty0790" target="_blank">Smarty - Facebook Profile</a>
-        
-      </div>
-
-      <div class="member-card">
-       <a href="https://ibb.co/qL5DtBhq"><img src="https://i.ibb.co/ymSNw0Kv/1748978703891.jpg" alt="1748978703891" border="0"></a>
-        <h4>Our Members</h4>
-        <h3>Shad</h3>
-        <p>Typer & Most Popular Abuser</p>
-        <a href="https://www.facebook.com/sun.shad.gu" target="_blank">Shad - Facebook Profile</a>
-      </div>
-
-      <div class="member-card">
-        <a href="https://ibb.co/0ySmy5vh"><img src="https://i.ibb.co/5hyGhZwB/1748978686375.jpg" alt="1748978686375" border="0"></a>
-        <h3>Alfaz</h3>
-        <p>Typer & Most Popular Abuser</p>
-        <a href="https://www.facebook.com/shakir.knak" target="_blank">Alfaz - Facebook Profile</a>
-      </div>
-
-      <div class="member-card">
-        <a href="https://ibb.co/bRmG8LRP"><img src="https://i.ibb.co/gF9cBwF3/1748978636709.jpg" alt="1748978636709" border="0"></a>
-        <h3>Rubel</h3>
-        <p>Typer & Most Popular Abuser</p>
-        <a href="https://www.facebook.com/md.rubel.336974" target="_blank">Rubel - Facebook Profile</a>
-      </div>
+      <p>Fastest Typist & Server Developer</p>
+      <a onclick="openModal('smarty')">View More Details</a>
+      <a href="https://www.facebook.com/ali7s90" target="_blank">Visit Facebook Profile</a>
     </div>
   </div>
+</div>
+
+<div class="team-section">
+  <h2>Members</h2>
+  <div class="members">
+    <div class="member-card">
+      <h3>Alfaz</h3>
+      <p>Typer & Most Popular Abuser</p>
+      <a onclick="openModal('alfaz')">View More Details</a>
+      <a href="https://www.facebook.com/shakir.knak" target="_blank">Visit Facebook Profile</a>
+    </div>
+    <div class="member-card">
+      <h3>Rubel</h3>
+      <p>Typer & Most Popular Abuser</p>
+      <a onclick="openModal('rubel')">View More Details</a>
+      <a href="https://www.facebook.com/md.rubel.1437" target="_blank">Visit Facebook Profile</a>
+    </div>
+    <div class="member-card">
+      <h3>Shad</h3>
+      <p>Typer & Popular Abuser</p>
+      <a onclick="openModal('shad')">View More Details</a>
+      <a href="https://www.facebook.com/c.t.e.857766" target="_blank">Visit Facebook Profile</a>
+    </div>
+  </div>
+</div>
+
+<!-- Modals -->
+<div id="modal-monster" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('monster')">&times;</span>
+    <h2>Monster</h2>
+    <p>Leader of Black Panther RULEX, known for server domination, bot coding, and powerful Facebook spamming tools.</p>
+  </div>
+</div>
+
+<div id="modal-smarty" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('smarty')">&times;</span>
+    <h2>Smarty</h2>
+    <p>Smart coder and fast typer, backbone of the team’s tool development and Facebook automation tactics.</p>
+  </div>
+</div>
+
+<div id="modal-alfaz" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('alfaz')">&times;</span>
+    <h2>Alfaz</h2>
+    <p>Most aggressive abuser and comment attacker, feared across groups and known for night raids.</p>
+  </div>
+</div>
+
+<div id="modal-rubel" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('rubel')">&times;</span>
+    <h2>Rubel</h2>
+    <p>Master of live trolling and viral meme spamming. Keeps the energy high and the enemies annoyed.</p>
+  </div>
+</div>
+
+<div id="modal-shad" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('shad')">&times;</span>
+    <h2>Shad</h2>
+    <p>The funniest roaster in the gang, always ready to flood comments and entertain with epic burns.</p>
+  </div>
+</div>
+
+<script>
+  function openModal(name) {
+    playClick();
+    document.getElementById("modal-" + name).style.display = "block";
+  }
+
+  function closeModal(name) {
+    playClick();
+    document.getElementById("modal-" + name).style.display = "none";
+  }
+
+  function playClick() {
+    document.getElementById('clickSound').play();
+  }
+
+  window.onclick = function(event) {
+    document.querySelectorAll('.modal').forEach(modal => {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  }
+</script>
+
+<!-- Footer -->
+<div style="
+  text-align: center;
+  padding: 25px 15px;
+  background: linear-gradient(to right, #0d0d0d, #1a0000);
+  border-top: 3px solid crimson;
+  color: #ff1744;
+  font-weight: 900;
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  font-family: 'Orbitron', sans-serif;
+  box-shadow: 0 -5px 20px crimson;
+  animation: intenseGlow 2s infinite alternate;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 999;
+">
+  ⚡ Made by <span style="color: white;">Monster</span> ⚡ — 2025 • <span style="color: crimson;">🌚👑</span>
+</div>
 
 </body>
-      </html>
+</html>
