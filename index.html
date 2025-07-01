@@ -6,7 +6,6 @@
   <title>Black Panther RULEX</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
-
     body {
       margin: 0;
       padding: 0;
@@ -17,7 +16,6 @@
       overflow-x: hidden;
       position: relative;
     }
-
     body::before {
       content: "";
       position: fixed;
@@ -31,19 +29,16 @@
       z-index: 0;
       animation: fogMove 60s linear infinite;
     }
-
     @keyframes fogMove {
       0% { background-position: 0 0; }
       100% { background-position: 100% 100%; }
     }
-
     .header {
       text-align: center;
       padding: 80px 20px;
       background: linear-gradient(to right, #0d0d0d, #1a1a1a);
       animation: pulse 5s infinite alternate;
     }
-
     .header h1 {
       font-size: 4em;
       color: crimson;
@@ -51,32 +46,26 @@
       letter-spacing: 3px;
       animation: neonGlow 2s infinite alternate, flicker 2s infinite;
     }
-
-    @keyframes flicker {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
-      20%, 24%, 55% { opacity: 0.4; }
-    }
-
     .header p {
       font-size: 1.4em;
       color: #aaa;
     }
-
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+      20%, 24%, 55% { opacity: 0.4; }
+    }
     @keyframes pulse {
       0% { background-position: 0 0; }
       100% { background-position: 100% 100%; }
     }
-
     @keyframes neonGlow {
       from { text-shadow: 0 0 5px crimson, 0 0 10px crimson; }
       to { text-shadow: 0 0 20px crimson, 0 0 30px red; }
     }
-
     .team-section {
       padding: 60px 20px;
       text-align: center;
     }
-
     .team-section h2 {
       color: crimson;
       font-size: 2.5em;
@@ -84,19 +73,16 @@
       text-transform: uppercase;
       animation: glow 1.5s infinite alternate;
     }
-
     @keyframes glow {
       0% { text-shadow: 0 0 5px crimson; }
       100% { text-shadow: 0 0 20px crimson; }
     }
-
     .members {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 30px;
     }
-
     .member-card {
       background-color: #111;
       border: 2px solid crimson;
@@ -107,13 +93,11 @@
       transition: transform 0.4s, box-shadow 0.4s;
       position: relative;
     }
-
     .member-card:hover {
       transform: scale(1.07);
       box-shadow: 0 0 30px red, inset 0 0 10px crimson;
       background: radial-gradient(circle at center, #1a1a1a 20%, #000 100%);
     }
-
     .member-card::after {
       content: '☠';
       position: absolute;
@@ -124,24 +108,19 @@
       animation: floatSkull 2.5s infinite ease-in-out;
       opacity: 0.6;
     }
-
     @keyframes floatSkull {
-      0% { transform: translateY(0); opacity: 0.5; }
+      0%, 100% { transform: translateY(0); opacity: 0.5; }
       50% { transform: translateY(-10px); opacity: 1; }
-      100% { transform: translateY(0); opacity: 0.5; }
     }
-
     .member-card h3 {
       margin: 15px 0 10px;
       color: #fff;
       font-size: 1.3em;
     }
-
-    .member-card p, .details {
+    .member-card p {
       color: #ccc;
       font-size: 0.9em;
     }
-
     .member-card a {
       margin-top: 10px;
       display: inline-block;
@@ -154,19 +133,15 @@
       transition: background 0.3s, transform 0.3s;
       animation: buttonPulse 2s infinite;
     }
-
     .member-card a:hover {
       background: crimson;
       color: #fff;
       transform: scale(1.05);
     }
-
     @keyframes buttonPulse {
-      0% { transform: scale(1); }
+      0%, 100% { transform: scale(1); }
       50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
     }
-
     .modal {
       display: none;
       position: fixed;
@@ -177,7 +152,6 @@
       height: 100%;
       background-color: rgba(0, 0, 0, 0.85);
     }
-
     .modal-content {
       background-color: #111;
       margin: 10% auto;
@@ -190,21 +164,15 @@
       color: #fff;
       animation: fadeIn 0.5s ease-in-out, evilShake 0.5s;
     }
-
     @keyframes fadeIn {
       from { transform: scale(0.9); opacity: 0; }
       to { transform: scale(1); opacity: 1; }
     }
-
     @keyframes evilShake {
-      0% { transform: translate(0px, 0px) rotate(0deg); }
-      20% { transform: translate(-2px, 2px) rotate(-1deg); }
-      40% { transform: translate(2px, -1px) rotate(1deg); }
-      60% { transform: translate(-1px, 2px) rotate(-1deg); }
-      80% { transform: translate(1px, -1px) rotate(1deg); }
-      100% { transform: translate(0px, 0px) rotate(0deg); }
+      0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
+      20%, 60% { transform: translate(-2px, 2px) rotate(-1deg); }
+      40%, 80% { transform: translate(2px, -1px) rotate(1deg); }
     }
-
     .close {
       color: crimson;
       float: right;
@@ -212,22 +180,26 @@
       font-weight: bold;
       cursor: pointer;
     }
-
     .close:hover {
       color: white;
     }
-
-    audio {
-      display: none;
-    }
-
     @keyframes intenseGlow {
-      0% {
-        text-shadow: 0 0 5px #ff1744, 0 0 10px #ff1744, 0 0 15px #ff1744;
-      }
-      100% {
-        text-shadow: 0 0 10px #ff1744, 0 0 20px #ff1744, 0 0 30px #ff1744, 0 0 40px red;
-      }
+      0% { text-shadow: 0 0 5px #ff1744, 0 0 10px #ff1744; }
+      100% { text-shadow: 0 0 10px #ff1744, 0 0 40px red; }
+    }
+    @keyframes floatEvil {
+      0% { transform: translateY(0px) rotate(0deg); opacity: 0.1; }
+      50% { transform: translateY(-100px) rotate(180deg); opacity: 0.3; }
+      100% { transform: translateY(0px) rotate(360deg); opacity: 0.1; }
+    }
+    .floating-evil {
+      position: fixed;
+      z-index: 10;
+      pointer-events: none;
+      color: crimson;
+      opacity: 0.2;
+      animation: floatEvil linear infinite;
+      font-family: 'Segoe UI Emoji', sans-serif;
     }
   </style>
 </head>
@@ -236,7 +208,6 @@
 <audio autoplay loop>
   <source src="https://www.fesliyanstudios.com/play-mp3/6516" type="audio/mp3">
 </audio>
-
 <audio id="clickSound" src="https://www.fesliyanstudios.com/play-mp3/6963" preload="auto"></audio>
 
 <div class="header">
@@ -250,14 +221,14 @@
     <div class="member-card">
       <h3>Monster</h3>
       <p>UNSTOPPABLE Server Master & Typer King</p>
-      <a onclick="openModal('monster'); speakDetails(modalTexts['monster']);">View More Details</a>
-      <a href="https://www.facebook.com/blackpantherrulexkaownerkamena" target="_blank">Visit Facebook Profile</a>
+      <a onclick="openModal('monster'); speakDetails(modalTexts['monster']);">View More</a>
+      <a href="https://www.facebook.com/blackpantherrulexkaownerkamena" target="_blank">Visit FB</a>
     </div>
     <div class="member-card">
       <h3>Smarty</h3>
       <p>Fastest Typist & Server Developer</p>
-      <a onclick="openModal('smarty'); speakDetails(modalTexts['smarty']);">View More Details</a>
-      <a href="https://www.facebook.com/ali7s90" target="_blank">Visit Facebook Profile</a>
+      <a onclick="openModal('smarty'); speakDetails(modalTexts['smarty']);">View More</a>
+      <a href="https://www.facebook.com/ali7s90" target="_blank">Visit FB</a>
     </div>
   </div>
 </div>
@@ -268,20 +239,46 @@
     <div class="member-card">
       <h3>Alfaz</h3>
       <p>Typer & Most Popular Abuser</p>
-      <a onclick="openModal('alfaz'); speakDetails(modalTexts['alfaz']);">View More Details</a>
-      <a href="https://www.facebook.com/shakir.knak" target="_blank">Visit Facebook Profile</a>
+      <a onclick="openModal('alfaz'); speakDetails(modalTexts['alfaz']);">View More</a>
+      <a href="https://www.facebook.com/shakir.knak" target="_blank">Visit FB</a>
     </div>
     <div class="member-card">
       <h3>Rubel</h3>
       <p>Typer & Most Popular Abuser</p>
-      <a onclick="openModal('rubel'); speakDetails(modalTexts['rubel']);">View More Details</a>
-      <a href="https://www.facebook.com/md.rubel.1437" target="_blank">Visit Facebook Profile</a>
+      <a onclick="openModal('rubel'); speakDetails(modalTexts['rubel']);">View More</a>
+      <a href="https://www.facebook.com/md.rubel.1437" target="_blank">Visit FB</a>
     </div>
     <div class="member-card">
       <h3>Shad</h3>
       <p>Typer & Popular Abuser</p>
-      <a onclick="openModal('shad'); speakDetails(modalTexts['shad']);">View More Details</a>
-      <a href="https://www.facebook.com/c.t.e.857766" target="_blank">Visit Facebook Profile</a>
+      <a onclick="openModal('shad'); speakDetails(modalTexts['shad']);">View More</a>
+      <a href="https://www.facebook.com/c.t.e.857766" target="_blank">Visit FB</a>
+    </div>
+  </div>
+</div>
+
+<div class="team-section">
+  <h2>Tools</h2>
+  <div class="members">
+    <div class="member-card">
+      <h3>WEB SERVER</h3>
+      <p> nonstop Auto msg & spam bot for domination</p>
+      <a href="https://first-server-ztz0.onrender.com" target="_blank">Open Tool</a>
+    </div>
+    <div class="member-card">
+      <h3>Auto Typer</h3>
+      <p>Fastest text typing automation system</p>
+      <a href="https://example.com/auto-typer" target="_blank">Open Tool</a>
+    </div>
+    <div class="member-card">
+      <h3>Group Raider</h3>
+      <p>Join + comment flood in target groups</p>
+      <a href="https://example.com/group-raider" target="_blank">Open Tool</a>
+    </div>
+    <div class="member-card">
+      <h3>Voice Reply Bot</h3>
+      <p>Replies in voice format using text-to-speech</p>
+      <a href="https://example.com/voice-reply-bot" target="_blank">Open Tool</a>
     </div>
   </div>
 </div>
@@ -293,6 +290,7 @@
 <div id="modal-rubel" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('rubel')">&times;</span><h2>Rubel</h2><p>Master of live trolling and viral meme spamming. Keeps the energy high and the enemies annoyed.</p></div></div>
 <div id="modal-shad" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('shad')">&times;</span><h2>Shad</h2><p>The funniest roaster in the gang, always ready to flood comments and entertain with epic burns.</p></div></div>
 
+<!-- Footer -->
 <div style="text-align: center; padding: 25px 15px; background: linear-gradient(to right, #0d0d0d, #1a0000); border-top: 3px solid crimson; color: #ff1744; font-weight: 900; font-size: 1.5em; letter-spacing: 2px; font-family: 'Orbitron', sans-serif; box-shadow: 0 -5px 20px crimson; animation: intenseGlow 2s infinite alternate; text-transform: uppercase; position: relative; z-index: 999;">
   ⚡ Made by <span style="color: white;">Monster</span> ⚡ — 2025 • <span style="color: crimson;">🌚👑</span>
 </div>
@@ -313,7 +311,6 @@
   }
 
   function closeModal(name) {
-    document.getElementById('clickSound').play();
     const modal = document.getElementById("modal-" + name);
     if (modal) modal.style.display = "none";
     window.speechSynthesis.cancel();
@@ -341,24 +338,6 @@
 
   // Floating evil emojis
   const evilEmojis = ['💀', '☠️', '👿', '🩸', '🔥'];
-  const style = document.createElement('style');
-  style.innerHTML = `
-    @keyframes floatEvil {
-      0% { transform: translateY(0px) rotate(0deg); opacity: 0.1; }
-      50% { transform: translateY(-100px) rotate(180deg); opacity: 0.3; }
-      100% { transform: translateY(0px) rotate(360deg); opacity: 0.1; }
-    }
-    .floating-evil {
-      position: fixed;
-      z-index: 10;
-      pointer-events: none;
-      color: crimson;
-      opacity: 0.2;
-      animation: floatEvil linear infinite;
-      font-family: 'Segoe UI Emoji', sans-serif;
-    }
-  `;
-  document.head.appendChild(style);
   for (let i = 0; i < 20; i++) {
     const evil = document.createElement('div');
     evil.className = 'floating-evil';
